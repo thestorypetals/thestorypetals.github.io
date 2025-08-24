@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - The Story Petals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="antialiased about-us-bg">
+    <nav class="bg-transparent fixed w-full z-20 top-0 left-0 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="font-serif text-2xl" style="color: burlywood; opacity: 1;">TheStoryPetals</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium" style="color: burlywood;">Home</a>
+                        <div class="relative">
+                            <button id="services-button" class="px-3 py-2 rounded-md text-sm font-medium" style="color: burlywood;">Services</button>
+                            <div id="services-dropdown" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 hidden">
+                                <a href="events.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Events</a>
+                                <a href="florals.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Florals</a>
+                            </div>
+                        </div>
+                        <a href="about.html" class="px-3 py-2 rounded-md text-sm font-medium" style="color: burlywood;">About Us</a>
+                        <a href="contact.html" class="px-3 py-2 rounded-md text-sm font-medium" style="color: burlywood;">Contact</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 about-us-bg">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium" style="color: burlywood;">Home</a>
+                <a href="events.html" class="block px-3 py-2 rounded-md text-base font-medium" style="color: burlywood;">Events</a>
+                <a href="florals.html" class="block px-3 py-2 rounded-md text-base font-medium" style="color: burlywood;">Florals</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium" style="color: burlywood;">About Us</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium" style="color: burlywood;">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <div class="min-h-screen flex items-center justify-center p-4">
+        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+            <div class="text-left">
+                <h1 class="about-us-h1 text-8xl md:text-9xl lg:text-[12rem] leading-none">ABOUT</h1>
+                <h1 class="about-us-h1 text-8xl md:text-9xl lg:text-[12rem] leading-none mt-[-2rem] md:mt-[-4rem]">US</h1>
+                <div class="about-us-text mt-8 space-y-4 text-lg">
+                    <p>The Story Petals offers a range <span class="font-bold">event planning and design services</span> curated to come together seamlessly.</p>
+                    <p>Our design vision combines <span class="font-bold">minimalist aesthetics with luxurious elements</span>, creating an atmosphere that feels both effortless and refined.</p>
+                    <p>We believe that every detail should feel intentional and thrive on creating an atmosphere that <span class="font-bold">resonates emotionally and creates lasting memories</span>. With a focus on clean lines, subtle textures, and thoughtfully curated elements to elevate your event, our goal is to create a space that feels <span class="font-bold">refined yet approachable</span>.</p>
+                    <div>
+                        <p class="font-bold">What makes us stand out:</p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>we ensure we are aligned with our client's vision and design aesthetic</li>
+                            <li>we are detail oriented and deliver on what we promise</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="about-us-image-container flex justify-center items-center">
+                <img src="./img5.png" alt="Bride in a beautiful setting" class="rounded-lg shadow-lg about-us-image">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

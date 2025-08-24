@@ -1,0 +1,158 @@
+/* FONT DEFINITIONS */
+@font-face {
+    font-family: 'DisplayFont';
+    src: url('./tan-pearl.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BodyFont';
+    src: url('./fira-code-medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* GENERAL BODY & TYPOGRAPHY */
+body {
+    font-family: 'BodyFont', sans-serif !important;
+    background-color: #F9F6F3;
+    color: #4a4a4a;
+    overflow-x: hidden;
+    padding-top: 64px; /* Added padding for fixed navbar */
+}
+
+h1 {
+    color: burlywood !important;
+}
+
+.font-serif {
+    font-family: 'DisplayFont', serif !important;
+}
+
+/* NAVIGATION BAR */
+.navbar-scrolled {
+    background-color: rgba(249, 246, 243, 0.8); /* Semi-transparent version of body bg */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+
+/* LOADING SCREEN */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #e8ceb0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-out;
+}
+
+.loader-container {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-container img {
+    width: 75%;
+    height: auto;
+}
+
+.progress-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: spin 2.5s linear infinite;
+}
+
+.progress-ring__circle {
+    stroke: #5d3215;
+    stroke-linecap: round;
+    stroke-dasharray: 100, 283;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.main-content {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+
+/* SERVICES SECTION */
+.service-number {
+    font-family: 'DisplayFont', serif;
+    font-size: clamp(4rem, 8vw, 8rem);
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.08);
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.text-container {
+    min-width: 0;
+    word-wrap: break-word;
+}
+
+.service-link {
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.service-link:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* HERO SECTION BUTTON */
+.explore-button {
+    color: burlywood;
+    border-color: burlywood;
+}
+
+.explore-button:hover,
+.explore-button:focus {
+    background-color: burlywood;
+    color: white;
+}
+
+/* ABOUT US PAGE */
+
+.about-us-h1 {
+    font-family: 'DisplayFont', serif !important;
+    color: #F9F6F3;
+    opacity: 0.5;
+}
+
+.about-us-text {
+    color: #5d3215;
+}
+
+.about-us-image-container {
+    height: 100%;
+}
+
+.about-us-image {
+    height: 100%;
+    width: auto;
+    max-height: 80vh;
+    object-fit: cover;
+}
+
+
+/* CONTACT PAGE FORM */
+.form-input {
+    background-color: #EAE1D7;
+    border-color: #D3BFA8;
+}

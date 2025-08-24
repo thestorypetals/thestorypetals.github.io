@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Planning - The Story Petals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="antialiased">
+    <nav class="bg-transparent fixed w-full z-20 top-0 left-0 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="font-serif text-2xl" style="color: burlywood;">TheStoryPetals</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium" style="color: burlywood;">Home</a>
+                        <div class="relative">
+                            <button id="services-button" class="px-3 py-2 rounded-md text-sm font-medium" style="color: burlywood;">Services</button>
+                            <div id="services-dropdown" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 hidden">
+                                <a href="events.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Events</a>
+                                <a href="florals.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Florals</a>
+                            </div>
+                        </div>
+                        <a href="about.html" class="px-3 py-2 rounded-md text-sm font-medium" style="color: burlywood;">About Us</a>
+                        <a href="contact.html" class="px-3 py-2 rounded-md text-sm font-medium" style="color: burlywood;">Contact</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[#F9F6F3]">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium" style="color: burlywood;">Home</a>
+                <a href="events.html" class="block px-3 py-2 rounded-md text-base font-medium" style="color: burlywood;">Events</a>
+                <a href="florals.html" class="block px-3 py-2 rounded-md text-base font-medium" style="color: burlywood;">Florals</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium" style="color: burlywood;">About Us</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium" style="color: burlywood;">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <main class="container mx-auto p-4 md:p-8 lg:p-12 max-w-7xl">
+        <section class="mb-24 md:mb-32 text-center">
+            <div class="mb-8">
+                <img src="./imgevent.jpg" alt="Bride and groom in an elegant setting" class="w-full h-auto rounded-lg object-cover max-h-[400px] md:max-h-[600px]" onerror="this.onerror=null;this.src='https://placehold.co/1200x800/EFEFEF/AAAAAA?text=Image+Not+Found';">
+            </div>
+            <h1 class="font-serif text-4xl md:text-6xl lg:text-8xl italic text-stone-800 mb-2">event</h1>
+            <h1 class="font-serif text-4xl md:text-6xl lg:text-8xl italic text-stone-800 mb-8">planning</h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 text-left">
+                <!-- Service Card 1 -->
+                <div class="flex flex-col">
+                    <div class="bg-[#BDBEA9] text-white py-3 px-4 md:px-6 rounded-lg font-semibold tracking-widest text-center text-sm md:text-base">DAY OF COORDINATION</div>
+                    <div class="flex flex-col flex-1 mt-4 space-y-4">
+                        <p class="text-stone-700 leading-relaxed text-sm md:text-base">You've <span class="font-bold">done the heavy lifting</span> & want <span class="font-bold">flawless execution & peace of mind</span> as your event day approaches.</p>
+                        <div class="bg-[#EAE1D7] p-4 md:p-6 rounded-lg flex-grow">
+                            <ul class="space-y-2 list-disc list-inside text-stone-800 text-sm md:text-base">
+                                <li>Final Design & Layout Refinement</li>
+                                <li>Vendor Management</li>
+                                <li>Timeline Creation & Final Details</li>
+                                <li>Event Day Coordination</li>
+                            </ul>
+                        </div>
+                        <div class="text-stone-600 pt-4 text-sm md:text-base">
+                            <p>1 month+ lead time</p>
+                            <p>2 meetings</p>
+                            <p>10 hours day of</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="flex flex-col">
+                    <div class="bg-[#BDBEA9] text-white py-3 px-4 md:px-6 rounded-lg font-semibold tracking-widest text-center text-sm md:text-base">PARTIAL PLANNING & DESIGN</div>
+                    <div class="flex flex-col flex-1 mt-4 space-y-4">
+                        <p class="text-stone-700 leading-relaxed text-sm md:text-base">You've <span class="font-bold">started planning</span> & need <span class="font-bold">professional guidance & design expertise</span> to bring it all together.</p>
+                        <div class="bg-[#EAE1D7] p-4 md:p-6 rounded-lg flex-grow">
+                            <ul class="space-y-2 list-disc list-inside text-stone-800 text-sm md:text-base">
+                                <li>Design Enhancement</li>
+                                <li>Vendor Recommendations & Coordination</li>
+                                <li>Timeline & Budget Assistance</li>
+                                <li>Event Day Coordination</li>
+                            </ul>
+                        </div>
+                        <div class="text-stone-600 pt-4 text-sm md:text-base">
+                            <p>4 meetings</p>
+                            <p>10 hours day of</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="flex flex-col">
+                    <div class="bg-[#BDBEA9] text-white py-3 px-4 md:px-6 rounded-lg font-semibold tracking-widest text-center text-sm md:text-base">FULL PLANNING & DESIGN</div>
+                    <div class="flex flex-col flex-1 mt-4 space-y-4">
+                        <p class="text-stone-700 leading-relaxed text-sm md:text-base">You'd like us to <span class="font-bold">guide you through every aspect of your event</span> with precision & creativity.</p>
+                        <div class="bg-[#EAE1D7] p-4 md:p-6 rounded-lg flex-grow">
+                            <ul class="space-y-2 list-disc list-inside text-stone-800 text-sm md:text-base">
+                                <li>Complete Event Concept & Design</li>
+                                <li>Vendor Selection & Coordination</li>
+                                <li>Timeline & Budget Management</li>
+                                <li>Event Day Coordination</li>
+                            </ul>
+                        </div>
+                        <div class="text-stone-600 pt-4 text-sm md:text-base">
+                            <p>5 meetings</p>
+                            <p>12 hours day of</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
