@@ -40,8 +40,13 @@ h1 {
 }
 
 /* NAVIGATION BAR */
+/* --- MODIFIED --- */
+nav {
+    transition: background-color 0.4s ease, box-shadow 0.4s ease; /* Added smooth transition */
+}
+
 .navbar-scrolled {
-    background-color: rgba(249, 246, 2f3, 0.8);
+    background-color: rgba(249, 246, 243, 0.8); /* Corrected alpha value */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -572,17 +577,55 @@ hr {
 }
 
 /* --- Instagram Scrolling Gallery --- */
+/* --- MODIFIED --- */
+.scrolling-gallery {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
 .scrolling-gallery-track {
     display: flex;
-    width: calc(250px * 16); /* 8 images * 2 for loop */
-    animation: scroll 60s linear infinite;
+    /* Duplicate the number of items for seamless loop (14 items * 2) */
+    width: calc(250px * 28);
+    animation: scroll 80s linear infinite;
 }
 
 @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-250px * 8)); }
+    from { transform: translateX(0); }
+    /* Animate to half the width */
+    to { transform: translateX(calc(-250px * 14)); }
 }
+
 
 .scrolling-gallery:hover .scrolling-gallery-track {
     animation-play-state: paused;
+}
+
+
+/* --- ADDED: SCROLL-TRIGGERED ANIMATIONS --- */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.fade-in-up.is-visible,
+.fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- ADDED: MODERN FORM INPUT STYLES --- */
+.form-input {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+    --tw-ring-color: burlywood; /* Ensures focus ring color matches */
+    box-shadow: 0 0 0 3px rgba(222, 184, 135, 0.4);
 }

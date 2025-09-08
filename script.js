@@ -40,18 +40,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.body.style.overflow = 'hidden';
 
-    document.fonts.ready.then(() => {
+    // Using Promise.all to wait for fonts and a minimum timeout
+    // This prevents the loading screen from disappearing too quickly on fast connections
+    Promise.all([
+        document.fonts.ready,
+        new Promise(resolve => setTimeout(resolve, 1000)) // Minimum 1-second display
+    ]).then(() => {
         const loadingScreen = document.getElementById('loading-screen');
         const mainContent = document.querySelector('.main-content');
         const overlayContent = document.getElementById('overlay-content');
         const progressRing = document.querySelector('.progress-ring');
         const videoOverlay = document.getElementById('video-overlay');
-        const loadingLogo = document.getElementById('loading-logo'); // ADDED
+        const loadingLogo = document.getElementById('loading-logo');
 
         if (loadingScreen && mainContent && overlayContent && progressRing && videoOverlay) {
             // Start the transition
             // 1. Fade out the spinner and logo
-            if(loadingLogo) loadingLogo.style.opacity = '0'; // ADDED
+            if(loadingLogo) loadingLogo.style.opacity = '0';
             progressRing.style.opacity = '0';
 
             // 2. Fade the loading screen background to transparent
@@ -74,4 +79,34 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = '';
         }
     });
+
+
+    // --- ADDED: SCROLL-TRIGGERED ANIMATION LOGIC ---
+
+    const animatedElements = document.querySelectorAll('.fade-in, .fade-in-up');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target); // Optional: Stop observing after animation
+            }
+        });
+    }, {
+        threshold: 0.1 // Trigger when 10% of the element is visible
+    });
+
+    animatedElements.forEach(element => {
+        observer.observe(element);
+    });
+
+    // --- ADDED: Seamless Instagram Gallery Logic ---
+    const galleryTrack = document.querySelector('.scrolling-gallery-track');
+    if (galleryTrack) {
+        // Clone all items and append them to the track for a seamless loop
+        const galleryItems = galleryTrack.querySelectorAll('div');
+        galleryItems.forEach(item => {
+            galleryTrack.appendChild(item.cloneNode(true));
+        });
+    }
 });
