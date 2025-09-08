@@ -6,30 +6,36 @@
     <title>Floral Design & Decor - The Story Petals</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="preload" href="./tan-pearl.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body class="antialiased">
-    <nav class="bg-transparent fixed w-full z-20 top-0 left-0 transition-all duration-300">
+    <nav class="bg-transparent fixed w-full z-30 top-0 left-0 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center">
-                    <a href="index.html" class="font-serif text-2xl" style="color: burlywood;">TheStoryPetals</a>
+            <div class="relative flex items-center justify-between h-16">
+                <div class="flex items-center w-full justify-center md:w-auto md:justify-start">
+                    <a href="index.html" class="font-serif text-2xl" style="color: burlywood;">A</a>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium" style="color: burlywood;">Home</a>
+                        <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium brand-accent">Home</a>
                         <div class="relative">
-                            <button id="services-button" class="px-3 py-2 rounded-md text-sm font-medium" style="color: burlywood;">Services</button>
+                            <button id="services-button" aria-haspopup="true" aria-expanded="false" class="px-3 py-2 rounded-md text-sm font-medium brand-accent">Services</button>
                             <div id="services-dropdown" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 hidden">
                                 <a href="events.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Events</a>
                                 <a href="florals.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Florals</a>
                             </div>
                         </div>
-                        <a href="about.html" class="px-3 py-2 rounded-md text-sm font-medium" style="color: burlywood;">About Us</a>
-                        <a href="contact.html" class="px-3 py-2 rounded-md text-sm font-medium" style="color: burlywood;">Contact</a>
+                        <a href="about.html" class="px-3 py-2 rounded-md text-sm font-medium brand-accent">About Us</a>
+                        <a href="contact.html" class="px-3 py-2 rounded-md text-sm font-medium brand-accent">Contact</a>
                     </div>
                 </div>
-                <div class="-mr-2 flex md:hidden">
-                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                <div class="absolute top-0 right-0 h-full flex items-center md:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md brand-accent" aria-controls="mobile-menu" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
                         <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -44,70 +50,149 @@
 
         <div class="md:hidden hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[#F9F6F3]">
-                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium" style="color: burlywood;">Home</a>
-                <a href="events.html" class="block px-3 py-2 rounded-md text-base font-medium" style="color: burlywood;">Events</a>
-                <a href="florals.html" class="block px-3 py-2 rounded-md text-base font-medium" style="color: burlywood;">Florals</a>
-                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium" style="color: burlywood;">About Us</a>
-                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium" style="color: burlywood;">Contact</a>
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">Home</a>
+                <a href="events.html" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">Events</a>
+                <a href="florals.html" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">Florals</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">About Us</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">Contact</a>
             </div>
         </div>
     </nav>
-    <main class="max-w-6xl mx-auto p-4 md:p-8 lg:p-12">
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center mb-12">
-            <!-- On mobile, image is in the natural flow (first). On desktop, text is ordered first. -->
-            <div class="order-2 md:order-1">
-                <h1 class="font-serif text-4xl md:text-6xl lg:text-8xl italic text-stone-800 mb-2">floral</h1>
-                <h1 class="font-serif text-4xl md:text-6xl lg:text-8xl italic text-stone-800 mb-2">design & decor</h1>
 
-            </div>
-            <div class="order-1 md:order-2">
-                <img src="./imgfloral.png" alt="Elegant floral arrangement with red and white roses" class="w-full h-auto rounded-lg object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x750/EFEFEF/AAAAAA?text=Image+Not+Found';">
-            </div>
-        </section>
-
-        <!-- Weddings Section -->
-        <section class="mb-12">
-            <div class="bg-[#C8D5B9] rounded-lg p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                <h2 class="font-serif text-3xl text-stone-800 text-center sm:text-left">weddings</h2>
-                <p class="text-stone-700 text-center sm:text-right">You want a <span class="font-bold">refined floral design aesthetic</span> with a luxury feel.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6 text-stone-700">
-                <div>
-                    <h4 class="font-bold mb-2 text-base md:text-lg">Ceremony / Reception:</h4>
-                    <ul class="space-y-1 list-disc list-inside text-sm md:text-base">
-                        <li>Partial coverage backdrop</li>
-                        <li>Aisle markers or a few ground arrangments</li>
-                        <li>Small to medium sized centerpieces</li>
-                        <li>Simple cake flowers</li>
-                        <li>A few accent arrangements (welcome table, etc.)</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold mb-2 text-base md:text-lg">Personal:</h4>
-                    <ul class="space-y-1 list-disc list-inside text-sm md:text-base">
-                        <li>Bridal Bouquet / South Asian floral bracelets</li>
-                        <li>Groom's Boutonniere / South Asian necklace garland</li>
-                        <li>A few Bridesmaids Bouquets & Groomsmen Boutonnières</li>
-                    </ul>
+    <section class="bg-[#F9F6F3] py-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="relative rounded-lg overflow-hidden shadow-md floral-hero-section">
+                <img src="./imgFloralHero.jpg" alt="Bride and groom under a floral arch" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-8 md:p-12 text-center">
+                     <h1 class="floral-hero-title">floral design<br>& decor</h1>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- A La Carte Section -->
-        <section>
-            <div class="bg-[#EAE1D7] rounded-lg p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                <h2 class="font-serif text-3xl text-stone-800 text-center sm:text-left">a la carte</h2>
-                <p class="text-stone-700 text-center sm:text-right">You're hosting a gathering and want <span class="font-bold">curated, custom designs.</span></p>
+    <section class="bg-[#F9F6F3] py-8 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="rounded-lg overflow-hidden shadow-md mb-8 h-[650px]">
+                <img src="./imgFloralServices.jpg" alt="Elegant wedding reception stage with floral decorations" class="w-full h-full object-cover object-bottom">
             </div>
-            <div class="mt-6 text-stone-700">
-                <ul class="space-y-1 list-disc list-inside text-sm md:text-base">
-                    <li>Minimal backdrops</li>
-                    <li>Tablescapes</li>
-                    <li>Smaller arrangements (bud vases, ikebana)</li>
-                </ul>
+
+            <div class="grid lg:grid-cols-5 gap-8 items-start">
+                <div class="lg:col-span-3 floral-info-card">
+                    <h2 class="floral-card-title title-weddings rounded-r-lg">weddings</h2>
+                    <p class="floral-card-description">You want a <span class="font-semibold">refined floral design aesthetic</span> with a luxury feel.</p>
+                    <div class="grid sm:grid-cols-2 gap-x-8 gap-y-6">
+                        <div>
+                            <h4 class="floral-card-subtitle">Ceremony / Reception:</h4>
+                            <ul class="floral-card-list">
+                                <li>Partial coverage backdrop</li>
+                                <li>Aisle markers or a few ground arrangments</li>
+                                <li>Small to medium sized centerpieces</li>
+                                <li>Simple cake flowers</li>
+                                <li>A few accent arrangements (welcome table)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="floral-card-subtitle">Personal:</h4>
+                            <ul class="floral-card-list">
+                                <li>Bridal Bouquet / South Asian floral bracelets</li>
+                                <li>Groom's Boutonniere / South Asian necklace garland</li>
+                                <li>A few Bridesmaids Bouquets & Groomsmen Boutonnières</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 floral-info-card">
+                    <h2 class="floral-card-title title-alacarte rounded-l-lg">a la carte</h2>
+                    <p class="floral-card-description">You're hosting a gathering and want <span class="font-semibold">curated, custom designs.</span></p>
+                    <ul class="floral-card-list">
+                        <li>Minimal backdrops</li>
+                        <li>Tablescape setup</li>
+                        <li>Small to medium arrangements</li>
+                    </ul>
+                </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <section class="bg-[#F9F6F3] py-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="space-y-6">
+                        <div class="process-step">
+                            <div class="flex items-start gap-4">
+                                <span class="process-number">01.</span>
+                                <div>
+                                    <h3 class="process-title">Inquiry & Consultation</h3>
+                                    <p class="process-description">Understand your vision, style, and floral needs</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="flex items-start gap-4">
+                                <span class="process-number">02.</span>
+                                <div>
+                                    <h3 class="process-title">Proposal & Quote</h3>
+                                    <p class="process-description">A detailed floral design proposal is curated with a mood board & itemized list</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="flex items-start gap-4">
+                                <span class="process-number">03.</span>
+                                <div>
+                                    <h3 class="process-title">Contract & Deposit</h3>
+                                    <p class="process-description">Once the proposal is approved, we secure your date and 25% deposit</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="flex items-start gap-4">
+                                <span class="process-number">04.</span>
+                                <div>
+                                    <h3 class="process-title">Design Refinement & Final Payment</h3>
+                                    <p class="process-description">Fine-tune details such as flower choices, color palette, and quantities. Balance is due prior to your event with all details confirmed</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="flex items-start gap-4">
+                                <span class="process-number">05.</span>
+                                <div>
+                                    <h3 class="process-title">Execution & Delivery</h3>
+                                    <p class="process-description">Our team designs, delivers, and installs your florals as planned</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <div class="aspect-[3/4] overflow-hidden rounded-lg shadow-md">
+                        <img src="./imgFloralProcess.jpg" alt="Groom smiling during wedding celebration" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#EAE1D7] text-center py-8 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="font-serif text-2xl" style="color: #523f2f;">The Story Petals</h3>
+            <div class="flex justify-center my-4">
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="text-[#523f2f] hover:text-[burlywood] transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                    </svg>
+                </a>
+            </div>
+            <p class="text-sm" style="color: #523f2f;">&copy; 2025 The Story Petals. All Rights Reserved.</p>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

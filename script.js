@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenu = document.getElementById('mobile-menu');
     const nav = document.querySelector('nav');
 
-    // Toggle the services dropdown visibility
     if (servicesButton && servicesDropdown) {
         servicesButton.addEventListener('click', (event) => {
             event.stopPropagation();
@@ -17,21 +16,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Toggle the mobile menu visibility
     if (mobileMenuButton && mobileMenu) {
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
     }
 
-    // Close the services dropdown if clicked outside
     window.addEventListener('click', (event) => {
         if (servicesDropdown && !servicesDropdown.classList.contains('hidden') && !servicesButton.contains(event.target)) {
             servicesDropdown.classList.add('hidden');
         }
     });
 
-    // Add scrolled class to nav on scroll
     window.addEventListener('scroll', () => {
         if (window.scrollY > 10) {
             nav.classList.add('navbar-scrolled');
@@ -40,36 +36,42 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // --- LOADING SCREEN & HERO ANIMATION LOGIC ---
 
-    // --- LOADING SCREEN LOGIC ---
-
-    // Hide body scrollbar initially
     document.body.style.overflow = 'hidden';
 
-    // Use the Font Loading API to wait for custom fonts to be ready
     document.fonts.ready.then(() => {
         const loadingScreen = document.getElementById('loading-screen');
         const mainContent = document.querySelector('.main-content');
         const overlayContent = document.getElementById('overlay-content');
-        document.body.style.overflow = 'scroll';
-        if (loadingScreen && mainContent) {
-            // Fade out loading screen
-            loadingScreen.style.opacity = '0';
-            // After fade out, hide it and restore scroll
+        const progressRing = document.querySelector('.progress-ring');
+        const videoOverlay = document.getElementById('video-overlay');
+        const loadingLogo = document.getElementById('loading-logo'); // ADDED
+
+        if (loadingScreen && mainContent && overlayContent && progressRing && videoOverlay) {
+            // Start the transition
+            // 1. Fade out the spinner and logo
+            if(loadingLogo) loadingLogo.style.opacity = '0'; // ADDED
+            progressRing.style.opacity = '0';
+
+            // 2. Fade the loading screen background to transparent
+            loadingScreen.style.backgroundColor = 'transparent';
+
+            // 3. Simultaneously fade in the main content and hero overlay
+            mainContent.style.opacity = '1';
+            overlayContent.style.opacity = '1';
+
+            // 4. After the transition, hide the loading screen and restore scroll
             setTimeout(() => {
                 loadingScreen.style.display = 'none';
-            }, 500); // Matches transition duration
+                document.body.style.overflow = '';
+            }, 800); // Corresponds to the transition duration in CSS
 
-            // Fade in main content
-            mainContent.style.opacity = '1';
-        }
-
-        // Fade in the hero text after a short delay
-        if(overlayContent) {
-            setTimeout(() => {
-                overlayContent.classList.remove('opacity-0');
-                overlayContent.classList.add('opacity-100');
-            }, 500);
+        } else {
+            // Fallback if elements are missing
+            if(loadingScreen) loadingScreen.style.display = 'none';
+            if(mainContent) mainContent.style.opacity = '1';
+            document.body.style.overflow = '';
         }
     });
 });

@@ -1,29 +1,38 @@
 /* FONT DEFINITIONS */
 @font-face {
     font-family: 'DisplayFont';
-    src: url('./tan-pearl.otf') format('opentype');
+    src: url('./tan-pearl.woff2') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'BodyFont';
-    src: url('./fira-code-medium.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
+/* Replaced BodyFont with Josefin Sans */
 /* GENERAL BODY & TYPOGRAPHY */
+:root{
+  --bg: #F9F6F3;
+  --text: #523f2f;
+  --muted: #BDBEA9;
+  --paper: #EAE1D7;
+  --sage: #C8D5B9;
+  --brand-accent: burlywood;
+  --stone-300: #d6d3d1;
+  /* Added new color variables for floral page ONLY */
+  --weddings-bg: #cbc7b7;
+  --alacarte-bg: #d8bf9f;
+  --floral-card-bg: #f2efeb;
+}
+
 body {
-    font-family: 'BodyFont', sans-serif !important;
-    background-color: #F9F6F3;
-    color: #4a4a4a;
+    font-family: 'Josefin Sans', sans-serif !important;
+    background-color: var(--bg);
+    color: var(--text); /* UPDATED main text color */
     overflow-x: hidden;
-    padding-top: 64px; /* Added padding for fixed navbar */
+    padding-top: 64px;
 }
 
 h1 {
-    color: burlywood !important;
+    /* Keeping h1 specific styling as per design, but general h1 color is now body color */
+    color: #523f2f !important; /* Changed to match body text color as per image */
 }
 
 .font-serif {
@@ -32,14 +41,13 @@ h1 {
 
 /* NAVIGATION BAR */
 .navbar-scrolled {
-    background-color: rgba(249, 246, 243, 0.8); /* Semi-transparent version of body bg */
+    background-color: rgba(249, 246, 2f3, 0.8);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-
-/* LOADING SCREEN */
+/* LOADING SCREEN & ANIMATION */
 #loading-screen {
     position: fixed;
     top: 0;
@@ -51,7 +59,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity 0.5s ease-out;
+    transition: background-color 0.8s ease-in-out; /* Changed property */
 }
 
 .loader-container {
@@ -63,9 +71,11 @@ h1 {
     align-items: center;
 }
 
-.loader-container img {
+#loading-logo {
     width: 75%;
     height: auto;
+    z-index: 10;
+    transition: opacity 0.5s ease-out; /* ADDED for smooth fade-out */
 }
 
 .progress-ring {
@@ -73,6 +83,7 @@ h1 {
     width: 100%;
     height: 100%;
     animation: spin 2.5s linear infinite;
+    transition: opacity 0.5s ease-out; /* Add transition for fade out */
 }
 
 .progress-ring__circle {
@@ -91,15 +102,112 @@ h1 {
     transition: opacity 0.5s ease-in;
 }
 
+/* HERO SECTION */
+#hero-logo {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+}
 
-/* SERVICES SECTION */
-.service-number {
+#video-overlay, #overlay-content {
+    transition: opacity 0.8s ease-in-out;
+}
+
+/* "WHAT WE OFFER" SECTION - UPDATED */
+.what-we-offer-h1 {
     font-family: 'DisplayFont', serif;
-    font-size: clamp(4rem, 8vw, 8rem);
-    font-weight: 500;
-    color: rgba(0, 0, 0, 0.08);
+    font-size: clamp(3rem, 10vw, 6rem);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    text-transform: lowercase;
+    margin-bottom: 3rem;
+    color: #523f2f !important; /* Match body text color as per image */
+}
+
+.what-we-offer-title {
+    font-family: 'DisplayFont', serif;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    text-transform: lowercase;
+    color: #523f2f;
+    margin-bottom: 0;
+}
+
+.service-section {
+    margin-bottom: 0; /* Adjusted for wrapper */
+}
+
+.service-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    color: #523f2f;
+    margin: 0;
+}
+
+.service-number {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2rem; /* REDUCED base size */
+    font-weight: 300;
+    color: #523f2f;
+    line-height: 1;
+    margin-left: 2rem;
+}
+
+.service-details {
+    margin-top: 0.5rem; /* REDUCED gap */
+    margin-left: 0;
+}
+
+.service-detail-item {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #523f2f;
+    margin: 0.25rem 0;
+}
+
+.service-detail-item-indent {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #523f2f;
+    margin: 0.25rem 0;
+    margin-left: 1.5rem;
+}
+
+.service-divider {
+    border: none;
+    height: 1px;
+    background-color: #523f2f;
+    opacity: 0.2;
+    margin: 1.5rem 0 0 0; /* Adjusted margin */
+}
+
+/* LEGACY SERVICE STYLES - keeping for backward compatibility */
+.service-number {
+    font-size: clamp(1.75rem, 3vw, 2.5rem); /* ADJUSTED responsive font size */
+    font-weight: 300;
+    color: var(--text); /* Match body text color */
     line-height: 1;
     flex-shrink: 0;
+}
+
+#services-image-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: 0;
+}
+
+#services-image-container img {
+    flex: 1;
+    width: 100%;
+    object-fit: cover;
+    min-height: 0;
+    border-radius: 0.5rem;
 }
 
 .text-container {
@@ -107,52 +215,374 @@ h1 {
     word-wrap: break-word;
 }
 
-.service-link {
-    transition: box-shadow 0.3s ease-in-out;
-}
-
-.service-link:hover {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-/* HERO SECTION BUTTON */
 .explore-button {
     color: burlywood;
     border-color: burlywood;
 }
 
-.explore-button:hover,
-.explore-button:focus {
+.explore-button:hover, .explore-button:focus {
     background-color: burlywood;
     color: white;
 }
 
-/* ABOUT US PAGE */
+/* --- CUSTOM CLASSES --- */
+.service-card {
+    display:block; padding:1rem; border-radius:0.5rem; transition: box-shadow 300ms;
+}
 
-.about-us-h1 {
-    font-family: 'DisplayFont', serif !important;
-    color: #F9F6F3;
+.service-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); /* hover shadow */
+}
+
+/* ADDED for clickable service sections */
+.service-link-wrapper {
+    display: block;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 0.5rem;
+    margin: -1rem; /* Counteract padding to align dividers */
+}
+
+.service-link-wrapper:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(82, 63, 47, 0.07), 0 4px 6px -2px rgba(82, 63, 47, 0.05);
+}
+
+
+.service-title {
+    font-weight:700; font-size:1.25rem; line-height:1.75rem;
+}
+
+.service-description p {
+    /* Targeting paragraphs inside service-description for consistent styling */
+    margin-top: 0.25rem; /* Small margin for lines within description */
+}
+
+.service-description p:first-child {
+    font-weight:700; /* Ensure only the first line is bold */
+}
+
+/* Ensure horizontal rules have consistent spacing */
+hr {
+    margin-top:1rem; margin-bottom:1rem; border-color: var(--stone-300); /* Added spacing to hr */
+}
+
+/* Brand accent text color */
+.brand-accent{ color: var(--brand-accent); }
+
+/* RESPONSIVE DESIGN FOR NEW WHAT WE OFFER SECTION */
+@media (max-width: 1024px) {
+    .service-number {
+        font-size: 2rem;
+        margin-left: 1rem;
+    }
+
+    .what-we-offer-title {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-number {
+        font-size: 1.75rem;
+        margin-left: 0.5rem;
+    }
+
+    .service-detail-item-indent {
+        margin-left: 1rem;
+    }
+
+    .what-we-offer-h1{
+        font-size:1.5rem;
+        line-height:2rem;
+    }
+}
+
+/* EVENT PLANNING PAGE STYLES */
+.event-planning-title {
+    font-family: 'DisplayFont', serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    text-transform: lowercase;
+    color: #523f2f;
+    margin: 0;
+}
+
+/* Service Package Cards */
+.service-package-card {
+    background: #f2efeb;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-package-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.service-package-header {
+    background: #f8f8f3;
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+.service-package-title {
+    font-family: 'DisplayFont', serif;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: #5d3215;
+    margin: 0;
+    letter-spacing: 0.05em;
+}
+
+.service-package-content {
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    min-height: 400px;
+}
+
+.service-package-description {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #523f2f;
+    text-align: left;
+}
+
+.service-package-features {
+    flex-grow: 1;
+    background-color: #fbfdfe;
+    padding: 20px;
+    border-radius: 0.75rem;
+}
+
+.service-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    space-y: 0.75rem;
+}
+
+.service-features-list li {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #523f2f;
+    margin: 0.75rem 0;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.service-features-list li::before {
+    content: '•';
+    color: #523f2f;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.service-package-details {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid #E5E7EB;
+}
+
+.service-package-details p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.9rem;
+    color: #523f2f;
+    margin: 0.25rem 0;
+}
+
+/* Process Steps */
+.process-step {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(82, 63, 47, 0.1);
+}
+
+.process-step:last-child {
+    border-bottom: none;
+}
+
+.process-number {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #523f2f;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.process-title {
+    font-family: 'DisplayFont', serif;
+    font-size: 1.25rem;
+    color: #ba9464;
+    font-weight: 600; /* Added weight to match design */
+    margin: 0 0 0.5rem 0;
+    line-height: 1.3;
+}
+
+.process-description {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #523f2f;
+    margin: 0.25rem 0;
+}
+
+/* Specific styling for the 'plans' image */
+#plans-image {
+    object-fit: cover;
+    object-position: top; /* This ensures the top part of the image is visible */
+}
+
+/* Mobile Responsiveness for Event Page */
+@media (max-width: 768px) {
+    .event-planning-title {
+        font-size: clamp(2.5rem, 10vw, 4rem);
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .service-package-content {
+        min-height: auto;
+        padding: 1.5rem 1rem;
+    }
+
+    .service-package-header {
+        padding: 1.5rem 1rem;
+    }
+
+    .service-package-title {
+        font-size: 1.25rem;
+    }
+
+    .process-number {
+        font-size: 1.5rem;
+    }
+
+    .process-title {
+        font-size: 1.125rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .process-step .flex {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .process-number {
+        align-self: flex-start;
+    }
+}
+
+
+/* --- NEW FLORAL PAGE STYLES --- */
+/* These styles are new and only affect florals.html */
+
+.floral-hero-section {
+    height: calc(100vh - 64px); /* Full screen height minus navbar height */
+}
+
+.floral-hero-title {
+    font-family: 'DisplayFont', serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 1;
+    text-transform: lowercase;
+    color: #f2efeb !important;
+}
+
+.floral-info-card {
+
+}
+
+.floral-card-title {
+    font-family: 'DisplayFont', serif;
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    padding: 1rem;
+    display: inline-block;
+}
+
+.title-weddings {
+    background-color: var(--weddings-bg);
+}
+
+.title-alacarte {
+    background-color: var(--alacarte-bg);
+}
+
+.floral-card-description {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+}
+
+.floral-card-subtitle {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #642f19;
+    margin-bottom: 0.75rem;
+}
+
+.floral-card-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.floral-card-list li {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text);
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.floral-card-list li::before {
+    content: '•';
+    color: var(--text);
     opacity: 0.5;
+    position: absolute;
+    left: 0;
+    top: 1px;
+}
+
+
+/* --- NEW ABOUT US STYLES --- */
+.about-us-h1 {
+    font-family: 'DisplayFont', serif;
+    color: var(--text);
+    text-transform: lowercase;
 }
 
 .about-us-text {
-    color: #5d3215;
+    color: var(--text);
 }
 
-.about-us-image-container {
-    height: 100%;
+/* --- Instagram Scrolling Gallery --- */
+.scrolling-gallery-track {
+    display: flex;
+    width: calc(250px * 16); /* 8 images * 2 for loop */
+    animation: scroll 60s linear infinite;
 }
 
-.about-us-image {
-    height: 100%;
-    width: auto;
-    max-height: 80vh;
-    object-fit: cover;
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-250px * 8)); }
 }
 
-
-/* CONTACT PAGE FORM */
-.form-input {
-    background-color: #EAE1D7;
-    border-color: #D3BFA8;
+.scrolling-gallery:hover .scrolling-gallery-track {
+    animation-play-state: paused;
 }
