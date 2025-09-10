@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (mobileMenuButton && mobileMenu) {
         mobileMenuButton.addEventListener('click', () => {
+            // Toggle the active class on the button for the animation
+            mobileMenuButton.classList.toggle('is-active');
+            // Toggle the menu visibility
             mobileMenu.classList.toggle('hidden');
         });
     }
@@ -64,7 +67,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 3. Simultaneously fade in the main content and hero overlay
             mainContent.style.opacity = '1';
-            overlayContent.style.opacity = '1';
+            if (overlayContent) {
+                overlayContent.style.opacity = '1';
+            }
+
 
             // 4. After the transition, hide the loading screen and restore scroll
             setTimeout(() => {
@@ -81,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // --- ADDED: SCROLL-TRIGGERED ANIMATION LOGIC ---
+    // --- SCROLL-TRIGGERED ANIMATION LOGIC ---
 
     const animatedElements = document.querySelectorAll('.fade-in, .fade-in-up');
 
@@ -100,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(element);
     });
 
-    // --- ADDED: Seamless Instagram Gallery Logic ---
+    // --- Seamless Instagram Gallery Logic ---
     const galleryTrack = document.querySelector('.scrolling-gallery-track');
     if (galleryTrack) {
         // Clone all items and append them to the track for a seamless loop

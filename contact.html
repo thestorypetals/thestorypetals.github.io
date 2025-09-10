@@ -35,14 +35,11 @@
                     </div>
                 </div>
                 <div class="absolute top-0 right-0 h-full flex items-center md:hidden">
-                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md brand-accent" aria-controls="mobile-menu" aria-expanded="false">
+                    <button id="mobile-menu-button" class="hamburger-button" type="button" aria-controls="mobile-menu" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
-                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
                     </button>
                 </div>
             </div>
@@ -86,7 +83,7 @@
                         <input type="date" name="event-date" id="event-date" class="mt-1 block w-full px-3 py-2 border border-stone-300 rounded-md shadow-sm focus:outline-none focus:ring-[burlywood] focus:border-[burlywood] sm:text-sm form-input">
                     </div>
                     <div>
-                        <label for="vision" class="block text-sm font-medium text-stone-700">What is your event/floral vision?</label>
+                        <label for="vision" class="block text-sm font-medium text-stone-700">What is your event vision?</label>
                         <textarea id="vision" name="vision" rows="4" class="mt-1 block w-full px-3 py-2 border border-stone-300 rounded-md shadow-sm focus:outline-none focus:ring-[burlywood] focus:border-[burlywood] sm:text-sm form-input"></textarea>
                     </div>
                     <div>

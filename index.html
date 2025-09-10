@@ -28,42 +28,39 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="relative flex items-center justify-between h-16">
                 <div class="flex items-center w-full justify-center md:w-auto md:justify-start">
-                    <a href="index.html" class="font-serif text-3xl" style="color: burlywood;">A</a>
+                    <a href="index.html" class="font-serif text-3xl brand-accent">A</a>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="index.html" class="px-3 py-2 rounded-md text-base font-medium" style="color: burlywood;">Home</a>
+                        <a href="index.html" class="px-3 py-2 rounded-md text-base font-medium brand-accent">Home</a>
                         <div class="relative">
-                            <button id="services-button" class="px-3 py-2 rounded-md text-base font-medium" style="color: burlywood;">Services</button>
+                            <button id="services-button" class="px-3 py-2 rounded-md text-base font-medium brand-accent">Services</button>
                             <div id="services-dropdown" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 hidden">
                                 <a href="events.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Events</a>
                                 <a href="florals.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Florals</a>
                             </div>
                         </div>
-                        <a href="about.html" class="px-3 py-2 rounded-md text-base font-medium" style="color: burlywood;">About Us</a>
-                        <a href="contact.html" class="px-3 py-2 rounded-md text-base font-medium" style="color: burlywood;">Contact</a>
+                        <a href="about.html" class="px-3 py-2 rounded-md text-base font-medium brand-accent">About Us</a>
+                        <a href="contact.html" class="px-3 py-2 rounded-md text-base font-medium brand-accent">Contact</a>
                     </div>
                 </div>
                 <div class="absolute top-0 right-0 h-full flex items-center md:hidden">
-                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md" style="color: burlywood;" aria-controls="mobile-menu" aria-expanded="false">
+                     <button id="mobile-menu-button" class="hamburger-button" type="button" aria-controls="mobile-menu" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
-                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
                     </button>
                 </div>
             </div>
         </div>
         <div class="md:hidden hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[#F9F6F3]">
-                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium" style="color: burlywood;">Home</a>
-                <a href="events.html" class="block px-3 py-2 rounded-md text-base font-medium" style="color: burlywood;">Events</a>
-                <a href="florals.html" class="block px-3 py-2 rounded-md text-base font-medium" style="color: burlywood;">Florals</a>
-                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium" style="color: burlywood;">About Us</a>
-                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium" style="color: burlywood;">Contact</a>
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">Home</a>
+                <a href="events.html" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">Events</a>
+                <a href="florals.html" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">Florals</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">About Us</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">Contact</a>
             </div>
         </div>
     </nav>
@@ -76,23 +73,26 @@
                     Your browser does not support the video tag.
                 </video>
                 <div id="video-overlay" class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-30"></div>
-                <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-                    <div id="overlay-content" class="text-center text-white px-4 opacity-0 w-full h-full flex flex-col">
-                        <div class="flex-grow flex items-center justify-center">
-                            <img id="hero-logo" src="./logostory.png" alt="The Story Petals Logo">
+                <div class="absolute top-0 left-0 w-full h-full">
+                    <!-- Logo Container: Positioned to fill the space and center its content -->
+                    <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+                        <div id="overlay-content" class="text-center text-white px-4 opacity-0">
+                             <img id="hero-logo" src="./logostory.png" alt="The Story Petals Logo">
                         </div>
-                        <div class="flex items-center justify-center gap-4 pb-8">
-                            <a href="#services-main" class="explore-button inline-block bg-transparent border-2 font-semibold tracking-widest py-3 px-8 rounded-lg transition-colors duration-300">
-                                Explore Services
-                            </a>
-                            <a href="https://www.instagram.com/thestorypetals/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center justify-center h-12 w-12 rounded-full bg-transparent border-2 border-[burlywood] hover:bg-[burlywood] transition-colors duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[burlywood] group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                                </svg>
-                            </a>
-                        </div>
+                    </div>
+
+                    <!-- Buttons Container: Positioned absolutely at the bottom -->
+                    <div class="absolute bottom-0 left-0 w-full flex items-center justify-center gap-4 pb-8">
+                        <a href="#services-main" class="explore-button inline-block bg-transparent border-2 font-semibold tracking-widest py-3 px-8 rounded-lg transition-colors duration-300">
+                            Explore Services
+                        </a>
+                        <a href="https://www.instagram.com/thestorypetals/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center justify-center h-12 w-12 rounded-full bg-transparent border-2 border-[burlywood] hover:bg-[burlywood] transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[burlywood] group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -101,69 +101,61 @@
         <main id="services-main" class="min-h-screen bg-[#F9F6F3] py-16 px-4 fade-in-up">
             <div class="max-w-7xl mx-auto">
                 <div class="grid lg:grid-cols-2 gap-16 lg:gap-20 items-start">
-                    <div class="space-y-4"> <h1 class="what-we-offer-title">what we offer</h1>
+                    <div class="space-y-4">
+                        <h1 class="what-we-offer-title">what we offer</h1>
                         <hr class="service-divider">
 
-                        <a href="events.html" class="service-link-wrapper p-4 -mt-4">
-                            <div class="service-section">
-                                <div class="flex items-start justify-between mb-2">
-                                    <div class="flex-1">
-                                        <h2 class="service-title">Event Planning & Design - Weddings & Other</h2>
+                        <a href="events.html" class="service-link-wrapper p-4 -mt-4 block">
+                            <div class="service-section flex items-start justify-between">
+                                <div class="flex-1">
+                                    <h2 class="service-title">Event Planning & Design - Weddings & Other</h2>
+                                    <div class="service-details mt-2">
+                                        <p class="service-detail-item">Day of</p>
+                                        <p class="service-detail-item">Partial</p>
+                                        <p class="service-detail-item">Full</p>
                                     </div>
-                                </div>
-                                <div class="service-details min-h-24">
-                                    <p class="service-detail-item">Day of</p>
-                                    <p class="service-detail-item">Partial</p>
-                                    <p class="service-detail-item">Full</p>
                                 </div>
                             </div>
                         </a>
 
                         <hr class="service-divider">
 
-                        <a href="florals.html" class="service-link-wrapper p-4">
-                            <div class="service-section">
-                                <div class="flex items-start justify-between mb-2">
-                                    <div class="flex-1">
-                                        <h2 class="service-title">Floral Design & Decor</h2>
+                        <a href="florals.html" class="service-link-wrapper p-4 block">
+                            <div class="service-section flex items-start justify-between">
+                                <div class="flex-1">
+                                    <h2 class="service-title">Floral Design & Decor</h2>
+                                    <div class="service-details mt-2">
+                                        <p class="service-detail-item">Wedding</p>
+                                        <p class="service-detail-item">A la carte</p>
                                     </div>
-                                </div>
-                                <div class="service-details min-h-24">
-                                    <p class="service-detail-item">Wedding</p>
-                                    <p class="service-detail-item">A la carte</p>
                                 </div>
                             </div>
                         </a>
 
                         <hr class="service-divider">
 
-                        <div class="space-y-4">
-                            <div class="service-section">
-                                <div class="flex items-start justify-between mb-2">
-                                    <div class="flex-1">
-                                        <h2 class="service-title">Event Planning + Floral Design & Decor</h2>
-                                    </div>
+                        <div class="p-4">
+                            <div class="service-section flex items-start justify-between">
+                                <div class="flex-1">
+                                    <h2 class="service-title">Event Planning + Floral Design & Decor</h2>
                                 </div>
-                                <div class="service-details min-h-24"></div>
                             </div>
                         </div>
 
                         <hr class="service-divider">
 
-                        <div class="space-y-4">
-                            <div class="service-section">
-                                <div class="flex items-start justify-between mb-2">
-                                    <div class="flex-1">
-                                        <h2 class="service-title">A la carte:</h2>
+                        <div class="p-4">
+                             <div class="service-section flex items-start justify-between">
+                                <div class="flex-1">
+                                    <h2 class="service-title">A la carte:</h2>
+                                    <div class="service-details mt-2">
+                                        <p class="service-detail-item">Content Creation (event reel)</p>
+                                        <p class="service-detail-item">Bride / Groom Styling</p>
+                                        <p class="service-detail-item">Stationary</p>
+                                        <p class="service-detail-item-indent">Invitations</p>
+                                        <p class="service-detail-item-indent">Signage (welcome sign, seating chart, etc.)</p>
+                                        <p class="service-detail-item">Logos / Illustrations</p>
                                     </div>
-                                </div>
-                                <div class="service-details">
-                                    <p class="service-detail-item">Content Creation (event reel)</p>
-                                    <p class="service-detail-item">Bride / Groom Styling</p>
-                                    <p class="service-detail-item">Stationary</p>
-                                    <p class="service-detail-item-indent">Invitations</p>
-                                    <p class="service-detail-item-indent">Signage (welcome sign, seating chart, etc.)</p>
-                                    <p class="service-detail-item">Logos / Illustrations</p>
                                 </div>
                             </div>
                         </div>
