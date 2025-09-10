@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - The Story Petals</title>
+    <meta name="description" content="Get in touch with The Story Petals to start planning your dream event. Contact us for a consultation on our event planning and floral design services.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
@@ -12,26 +13,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link rel="preload" href="./tan-pearl.woff2" as="font" type="font/woff2" crossorigin>
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' https://cdn.tailwindcss.com;
+        style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+        font-src 'self' https://fonts.gstatic.com;
+        img-src 'self' data: https://placehold.co;
+        object-src 'none';
+    ">
 </head>
 <body class="antialiased flex flex-col min-h-screen bg-[#F9F6F3]">
     <nav class="bg-transparent fixed w-full z-50 top-0 left-0 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="relative flex items-center justify-between h-16">
                 <div class="flex items-center w-full justify-center md:w-auto md:justify-start">
-                    <a href="index.html" class="font-serif text-3xl" style="color: burlywood;">A</a>
+                    <a href="/" class="font-serif text-3xl" style="color: burlywood;">A</a>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="index.html" class="px-3 py-2 rounded-md text-base font-medium brand-accent">Home</a>
+                        <a href="/" class="px-3 py-2 rounded-md text-base font-medium brand-accent">Home</a>
                         <div class="relative">
                             <button id="services-button" aria-haspopup="true" aria-expanded="false" class="px-3 py-2 rounded-md text-base font-medium brand-accent">Services</button>
                             <div id="services-dropdown" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 hidden">
-                                <a href="events.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Events</a>
-                                <a href="florals.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Florals</a>
+                                <a href="/events" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Events</a>
+                                <a href="/florals" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Florals</a>
                             </div>
                         </div>
-                        <a href="about.html" class="px-3 py-2 rounded-md text-base font-medium brand-accent">About Us</a>
-                        <a href="contact.html" class="px-3 py-2 rounded-md text-base font-medium brand-accent">Contact</a>
+                        <a href="/about" class="px-3 py-2 rounded-md text-base font-medium brand-accent">About Us</a>
+                        <a href="/contact" class="px-3 py-2 rounded-md text-base font-medium brand-accent">Contact</a>
                     </div>
                 </div>
                 <div class="absolute top-0 right-0 h-full flex items-center md:hidden">
@@ -47,11 +56,11 @@
 
         <div class="md:hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[#F9F6F3]">
-                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">Home</a>
-                <a href="events.html" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">Events</a>
-                <a href="florals.html" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">Florals</a>
-                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">About Us</a>
-                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">Contact</a>
+                <a href="/" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">Home</a>
+                <a href="/events" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">Events</a>
+                <a href="/florals" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">Florals</a>
+                <a href="/about" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">About Us</a>
+                <a href="/contact" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">Contact</a>
             </div>
         </div>
     </nav>
