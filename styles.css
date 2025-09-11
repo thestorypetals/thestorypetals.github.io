@@ -1,7 +1,8 @@
 /* FONT DEFINITIONS */
 @font-face {
     font-family: 'DisplayFont';
-    src: url('./tan-pearl.woff2') format('opentype');
+    src: url('./tan-pearl.woff2') format('woff2'),
+        url('./tan-pearl.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
