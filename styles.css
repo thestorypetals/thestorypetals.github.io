@@ -725,3 +725,48 @@ hr {
     --tw-ring-color: burlywood; /* Ensures focus ring color matches */
     box-shadow: 0 0 0 3px rgba(222, 184, 135, 0.4);
 }
+
+
+/* --- ENHANCED 'WHAT WE OFFER' STYLES (FINAL) --- */
+
+.service-tagline {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text);
+    opacity: 0.85;
+}
+
+.service-explore-cue {
+    color: var(--brand-accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem; /* 4px space */
+}
+
+/* --- Mobile-First Styles: Cue is always visible --- */
+.service-explore-cue {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Prepare for desktop transition */
+}
+.explore-text {
+    /* No specific styles needed for mobile */
+}
+.explore-arrow {
+    /* No specific styles needed for mobile */
+}
+
+/* --- Desktop Hover Animation (for screens 768px and wider) --- */
+@media (min-width: 768px) {
+    .service-explore-cue {
+        opacity: 0; /* Hide the cue by default on desktop */
+        transform: translateY(5px);
+    }
+
+    /* Reveal on desktop hover */
+    .service-link-wrapper:hover .service-explore-cue {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
