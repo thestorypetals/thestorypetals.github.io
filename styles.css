@@ -223,7 +223,7 @@ nav {
     letter-spacing: -0.02em;
     text-transform: lowercase;
     margin-bottom: 3rem;
-    color: #523f2f !important; /* Match body text color as per image */
+    color: #a29f95 !important; /* Match body text color as per image */
 }
 
 .what-we-offer-title {
@@ -232,7 +232,7 @@ nav {
     line-height: 0.9;
     letter-spacing: -0.02em;
     text-transform: lowercase;
-    color: #523f2f;
+    color: #a29f95 !important;
     margin-bottom: 0;
 }
 
@@ -245,7 +245,7 @@ nav {
     font-weight: 600;
     font-size: 1.25rem;
     line-height: 1.4;
-    color: #523f2f;
+    color: #642f19;
     margin: 0;
 }
 
@@ -426,7 +426,7 @@ hr {
 }
 
 .service-package-header {
-    background: #f8f8f3;
+    background: #d8bf9f;
     padding: 2rem 1.5rem;
     text-align: center;
 }
@@ -623,10 +623,11 @@ hr {
 }
 
 .floral-card-description {
+    margin-top: 2rem;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1rem;
     color: var(--text);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .floral-card-subtitle {
@@ -725,6 +726,12 @@ hr {
 .form-input:focus {
     --tw-ring-color: burlywood; /* Ensures focus ring color matches */
     box-shadow: 0 0 0 3px rgba(222, 184, 135, 0.4);
+}
+
+.contact-process-number {
+    color: white !important;
+    background-color: #d8bf9f !important;
+    font-size: large !important;
 }
 
 
