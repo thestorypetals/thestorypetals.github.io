@@ -1,4 +1,4 @@
-/* cart.js - MOBILE OVERFLOW FIX + TAN PEARL */
+/* cart.js - RESPONSIVE TITLE FIX */
 
 const SHOPIFY_DOMAIN = 'the-story-petals.myshopify.com';
 const STOREFRONT_ACCESS_TOKEN = '7faa695d3fc67f34912d984bd3b265f5';
@@ -39,23 +39,22 @@ if (productElement) {
                         'text-align': 'center',
                         'overflow': 'hidden',
                         'transition': 'transform 0.3s ease',
-                        'box-sizing': 'border-box', // Crucial: prevents padding from adding width
+                        'box-sizing': 'border-box', 
                         
                         // Layout
                         'padding-top': '15px', 
                         'padding-bottom': '0px',
                         'min-height': '420px', 
                         'margin-bottom': '50px',
-                        'margin-left': '20px', // Desktop gap
+                        'margin-left': '20px', 
 
                         // --- RESPONSIVE WIDTHS ---
                         '@media (min-width: 601px)': {
                             'width': 'calc(33.33% - 20px)',
                         },
                         
-                        // --- FIX: MOBILE OVERFLOW ---
+                        // --- MOBILE OVERFLOW FIX ---
                         '@media (max-width: 600px)': {
-                            // Calculates full viewport width minus 40px (20px padding on each side)
                             'width': 'calc(100vw - 40px)', 
                             'margin-left': '0px', 
                             'margin-right': '0px',
@@ -76,14 +75,22 @@ if (productElement) {
                          'display': 'block' 
                     },
 
-                    // --- TITLE STYLING (Tan Pearl) ---
+                    // --- TITLE STYLING (UPDATED) ---
                     title: {
                         'font-family': 'DisplayFont, serif', 
-                        'font-size': '1.8rem',
                         'color': '#5d3215',
-                        'margin-bottom': '5px',
                         'font-weight': 'normal',
-                        'line-height': '1.1'
+                        'line-height': '1.2',
+                        'margin-bottom': '5px',
+                        
+                        // 1. Responsive Font Size (Scales between 1.2rem and 1.8rem)
+                        'font-size': 'clamp(1.2rem, 5vw, 1.8rem)',
+
+                        // 2. Fixed Height Container (Prevents div resizing)
+                        'height': '3em', 
+                        'overflow': 'hidden', 
+                        'display': 'block',
+                        'padding': '0 5px'
                     },
 
                     // --- PRICE STYLING ---
