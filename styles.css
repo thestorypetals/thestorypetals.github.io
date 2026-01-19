@@ -778,3 +778,16 @@ hr {
         transform: translateY(0);
     }
 }
+
+
+/* --- POLICY ACCORDION FIX --- */
+.policy-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out; /* Smooth slide animation */
+}
+
+/* Optional: Rotate icon when open (if you want the + to spin) */
+.rotate-icon {
+    transform: rotate(45deg);
+}

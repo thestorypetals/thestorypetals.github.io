@@ -3,20 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found - The Story Petals</title>
-    <meta name="description" content="Oops! The page you were looking for could not be found. Return to The Story Petals homepage.">
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.thestorypetals.com/404.html">
-    <meta property="og:title" content="Page Not Found - The Story Petals">
-    <meta property="og:description" content="Oops! The page you were looking for could not be found.">
-    <meta property="og:image" content="https://www.thestorypetals.com/logoMain.png">
-
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.thestorypetals.com/404.html">
-    <meta property="twitter:title" content="Page Not Found - The Story Petals">
-    <meta property="twitter:description" content="Oops! The page you were looking for could not be found.">
-    <meta property="twitter:image" content="https://www.thestorypetals.com/logoMain.png">
+    <title>Shop Floral Arrangements - The Story Petals</title>
+    <meta name="description" content="Shop our curated collection of seasonal floral arrangements for local delivery.">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
@@ -25,48 +13,39 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-    <link rel="preload" href="./tan-pearl.woff2" as="font" type="font/woff2" crossorigin>
-    <meta http-equiv="Content-Security-Policy" content="
-        default-src 'self';
-        script-src 'self' https://cdn.tailwindcss.com;
-        style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
-        font-src 'self' https://fonts.gstatic.com;
-        img-src 'self' data: https://placehold.co;
-        object-src 'none';
-    ">
+    
 </head>
-<body class="antialiased flex flex-col min-h-screen bg-[#F9F6F3]">
+<body class="antialiased bg-[#F9F6F3]">
+
     <nav class="bg-transparent fixed w-full z-50 top-0 left-0 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="relative flex items-center justify-between h-16">
                 <div class="flex items-center w-full justify-center md:w-auto md:justify-start">
-                    <a href="/" class="font-serif text-3xl" style="color: burlywood;">A</a>
+                    <a href="/" class="font-serif text-3xl brand-accent">A</a>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <a href="/" class="px-3 py-2 rounded-md text-base font-medium brand-accent">Home</a>
                         <div class="relative">
-                            <button id="services-button" aria-haspopup="true" aria-expanded="false" class="px-3 py-2 rounded-md text-base font-medium brand-accent">Services</button>
+                            <button id="services-button" class="px-3 py-2 rounded-md text-base font-medium brand-accent">Services</button>
                             <div id="services-dropdown" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 hidden">
                                 <a href="/events" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Events</a>
                                 <a href="/florals" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Florals</a>
                             </div>
                         </div>
+                        <a href="/shop.html" class="px-3 py-2 rounded-md text-base font-medium brand-accent font-bold">Shop</a>
                         <a href="/about" class="px-3 py-2 rounded-md text-base font-medium brand-accent">About Us</a>
                         <a href="/contact" class="px-3 py-2 rounded-md text-base font-medium brand-accent">Contact</a>
                     </div>
                 </div>
                 <div class="absolute top-0 right-0 h-full flex items-center md:hidden">
-                    <button id="mobile-menu-button" class="hamburger-button" type="button" aria-controls="mobile-menu" aria-expanded="false">
+                   <button id="mobile-menu-button" class="hamburger-button" type="button">
                         <span class="sr-only">Open main menu</span>
-                        <span class="hamburger-box">
-                            <span class="hamburger-inner"></span>
-                        </span>
+                        <span class="hamburger-box"><span class="hamburger-inner"></span></span>
                     </button>
                 </div>
             </div>
         </div>
-
         <div class="md:hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[#F9F6F3]">
                 <a href="/" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">Home</a>
@@ -77,16 +56,15 @@
             </div>
         </div>
     </nav>
-    <main class="flex-grow flex items-center justify-center py-16 px-4">
-        <div class="text-center">
-            <h1 class="font-serif text-9xl font-bold text-stone-400">404</h1>
-            <p class="mt-4 text-2xl font-semibold text-stone-600">Page Not Found</p>
-            <p class="mt-2 text-stone-500">Sorry, we couldn’t find the page you’re looking for.</p>
-            <div class="mt-6">
-                <a href="/" class="explore-button inline-block bg-transparent border-2 font-semibold tracking-widest py-3 px-8 rounded-lg transition-colors duration-300">
-                    Go back home
-                </a>
-            </div>
+
+    <section class="pt-32 pb-12 px-4 text-center">
+        <h1 class="font-serif text-5xl md:text-7xl text-[#5d3215] mb-4">seasonal collection</h1>
+        <p class="text-lg text-[#523f2f] max-w-2xl mx-auto">Hand-curated floral arrangements available for local delivery.</p>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-4 pb-24 min-h-[60vh]">
+        <div id="product-collection">
+            <div class="text-center text-gray-400 mt-10">Loading Collection...</div>
         </div>
     </main>
 
@@ -114,6 +92,8 @@
             <p class="text-sm" style="color: #523f2f;">&copy; 2025 The Story Petals. All Rights Reserved.</p>
         </div>
     </footer>
+
     <script src="script.js"></script>
-</body>
+    <script src="https://sdks.shopifycdn.com/buy-button/latest/buybutton.js"></script>
+    <script src="cart.js"></script>
 </html>

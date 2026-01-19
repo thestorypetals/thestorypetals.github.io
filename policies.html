@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Policies - The Story Petals</title>
+    <meta name="description" content="Read our store policies regarding local delivery, refunds, privacy, and terms of service.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="preload" href="./tan-pearl.woff2" as="font" type="font/woff2" crossorigin>
+</head>
+<body class="antialiased bg-[#F9F6F3]">
+    
+    <nav class="bg-transparent fixed w-full z-50 top-0 left-0 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative flex items-center justify-between h-16">
+                <div class="flex items-center w-full justify-center md:w-auto md:justify-start">
+                    <a href="/" class="font-serif text-3xl brand-accent">A</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="/" class="px-3 py-2 rounded-md text-base font-medium brand-accent">Home</a>
+                        <div class="relative">
+                            <button id="services-button" class="px-3 py-2 rounded-md text-base font-medium brand-accent">Services</button>
+                            <div id="services-dropdown" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 hidden">
+                                <a href="/events" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Events</a>
+                                <a href="/florals" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Florals</a>
+                            </div>
+                        </div>
+                        <a href="/shop" class="px-3 py-2 rounded-md text-base font-medium brand-accent font-bold">Shop</a>
+                        <a href="/about" class="px-3 py-2 rounded-md text-base font-medium brand-accent">About Us</a>
+                        <a href="/contact" class="px-3 py-2 rounded-md text-base font-medium brand-accent">Contact</a>
+                    </div>
+                </div>
+                <div class="absolute top-0 right-0 h-full flex items-center md:hidden">
+                    <button id="mobile-menu-button" class="hamburger-button" type="button" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[#F9F6F3]">
+                <a href="/" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">Home</a>
+                <a href="/events" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">Events</a>
+                <a href="/florals" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">Florals</a>
+                <a href="/shop" class="px-3 py-2 rounded-md text-base font-medium brand-accent font-bold">Shop</a>
+                <a href="/about" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">About Us</a>
+                <a href="/contact" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="bg-[#F9F6F3] pt-32 pb-12 px-4 sm:px-6 lg:px-8 text-center fade-in">
+        <h1 class="font-serif text-5xl md:text-6xl text-[#523f2f] mb-4">store policies</h1>
+        <p class="max-w-2xl mx-auto text-lg text-[#8c7b70]">
+            Transparent details about how we work, so you can shop with confidence.
+        </p>
+    </section>
+
+    <section class="bg-[#F9F6F3] pb-24 px-4 sm:px-6 lg:px-8 fade-in-up">
+        <div class="max-w-3xl mx-auto space-y-4">
+
+            <div class="border-b border-[#d6d3d1]">
+                <button class="w-full py-6 text-left flex justify-between items-center group focus:outline-none" onclick="togglePolicy('shipping-policy')">
+                    <span class="font-serif text-2xl text-[#5d3215] group-hover:text-[burlywood] transition-colors">Local Delivery Policy</span>
+                    <span id="icon-shipping-policy" class="text-3xl font-light text-[burlywood] transition-transform duration-300">+</span>
+                </button>
+                <div id="shipping-policy" class="policy-content">
+                    <div class="pb-8 policy-text-block">
+                        <p>
+                            Since we handle fresh flowers, we personally deliver every arrangement to ensure it arrives in perfect condition. 
+                            If the recipient is not home, we will leave the flowers in a safe, shaded area or with a neighbor/receptionist if available.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-b border-[#d6d3d1]">
+                <button class="w-full py-6 text-left flex justify-between items-center group focus:outline-none" onclick="togglePolicy('refund-policy')">
+                    <span class="font-serif text-2xl text-[#5d3215] group-hover:text-[burlywood] transition-colors">Return & Refund Policy</span>
+                    <span id="icon-refund-policy" class="text-3xl font-light text-[burlywood] transition-transform duration-300">+</span>
+                </button>
+                <div id="refund-policy" class="policy-content">
+                    <div class="pb-8 policy-text-block">
+                        <h3 class="font-bold text-lg mb-2">Perishable Items</h3>
+                        <p class="mb-4">
+                            All of our floral arrangements and bouquets are perishable items, crafted fresh for each order. 
+                            Because of the nature of flowers, we cannot accept returns or exchanges.
+                        </p>
+                        
+                        <h3 class="font-bold text-lg mb-2">Cancellations</h3>
+                        <p class="mb-4">
+                            Orders must be cancelled at least <strong>3 days prior</strong> to the scheduled preparation or delivery date to receive a full refund. 
+                            Cancellations made within 3 days are not eligible for a refund as flowers will have already been sourced.
+                        </p>
+
+                        <h3 class="font-bold text-lg mb-2">Quality Guarantee</h3>
+                        <p>
+                            We want you to love your flowers. If you are unsatisfied with the quality of your arrangement, please contact us at 
+                            <a href="mailto:thestorypetals@gmail.com" class="text-[burlywood] hover:underline">thestorypetals@gmail.com</a> 
+                            within 24 hours of delivery with a photo, and we will do our best to make it right.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-b border-[#d6d3d1]">
+                <button class="w-full py-6 text-left flex justify-between items-center group focus:outline-none" onclick="togglePolicy('privacy-policy')">
+                    <span class="font-serif text-2xl text-[#5d3215] group-hover:text-[burlywood] transition-colors">Privacy Policy</span>
+                    <span id="icon-privacy-policy" class="text-3xl font-light text-[burlywood] transition-transform duration-300">+</span>
+                </button>
+                <div id="privacy-policy" class="policy-content">
+                    <div class="pb-8 policy-text-block legal-text">
+                        <p class="italic mb-4">Last updated: January 17, 2026</p>
+                        
+                        <p>The Story Petals operates this store and website, including all related information, content, features, tools, products and services, in order to provide you, the customer, with a curated shopping experience (the "Services"). The Story Petals is powered by Shopify, which enables us to provide the Services to you. This Privacy Policy describes how we collect, use, and disclose your personal information when you visit, use, or make a purchase or other transaction using the Services or otherwise communicate with us. If there is a conflict between our Terms of Service and this Privacy Policy, this Privacy Policy controls with respect to the collection, processing, and disclosure of your personal information.</p>
+                        
+                        <p>Please read this Privacy Policy carefully. By using and accessing any of the Services, you acknowledge that you have read this Privacy Policy and understand the collection, use, and disclosure of your information as described in this Privacy Policy.</p>
+
+                        <h4>Personal Information We Collect or Process</h4>
+                        <p>When we use the term "personal information," we are referring to information that identifies or can reasonably be linked to you or another person. Personal information does not include information that is collected anonymously or that has been de-identified, so that it cannot identify or be reasonably linked to you. We may collect or process the following categories of personal information, including inferences drawn from this personal information, depending on how you interact with the Services, where you live, and as permitted or required by applicable law:</p>
+                        <ul>
+                            <li><strong>Contact details:</strong> including your name, address, billing address, shipping address, phone number, and email address.</li>
+                            <li><strong>Financial information:</strong> including credit card, debit card, and financial account numbers, payment card information, financial account information, transaction details, form of payment, payment confirmation and other payment details.</li>
+                            <li><strong>Account information:</strong> including your username, password, security questions, preferences and settings.</li>
+                            <li><strong>Transaction information:</strong> including the items you view, put in your cart, add to your wishlist, or purchase, return, exchange or cancel and your past transactions.</li>
+                            <li><strong>Communications with us:</strong> including the information you include in communications with us, for example, when sending a customer support inquiry.</li>
+                            <li><strong>Device information:</strong> including information about your device, browser, or network connection, your IP address, and other unique identifiers.</li>
+                            <li><strong>Usage information:</strong> including information regarding your interaction with the Services, including how and when you interact with or navigate the Services.</li>
+                        </ul>
+
+                        <h4>Personal Information Sources</h4>
+                        <p>We may collect personal information from the following sources:</p>
+                        <ul>
+                            <li><strong>Directly from you:</strong> including when you create an account, visit or use the Services, communicate with us, or otherwise provide us with your personal information;</li>
+                            <li><strong>Automatically through the Services:</strong> including from your device when you use our products or services or visit our websites, and through the use of cookies and similar technologies;</li>
+                            <li><strong>From our service providers:</strong> including when we engage them to enable certain technology and when they collect or process your personal information on our behalf;</li>
+                            <li><strong>From our partners or other third parties.</strong></li>
+                        </ul>
+
+                        <h4>How We Use Your Personal Information</h4>
+                        <p>Depending on how you interact with us or which of the Services you use, we may use personal information for the following purposes:</p>
+                        <ul>
+                            <li><strong>Provide, Tailor, and Improve the Services:</strong> We use your personal information to provide you with the Services, including to perform our contract with you, to process your payments, to fulfill your orders, to remember your preferences and items you are interested in, to send notifications to you related to your account, to process purchases, returns, exchanges or other transactions, to create, maintain and otherwise manage your account, to arrange for shipping, to facilitate any returns and exchanges, to enable you to post reviews, and to create a customized shopping experience for you, such as recommending products related to your purchases. This may include using your personal information to better tailor and improve the Services.</li>
+                            <li><strong>Marketing and Advertising:</strong> We use your personal information for marketing and promotional purposes, such as to send marketing, advertising and promotional communications by email, text message or postal mail, and to show you online advertisements for products or services on the Services or other websites, including based on items you previously have purchased or added to your cart and other activity on the Services.</li>
+                            <li><strong>Security and Fraud Prevention:</strong> We use your personal information to authenticate your account, to provide a secure payment and shopping experience, detect, investigate or take action regarding possible fraudulent, illegal, unsafe, or malicious activity, protect public safety, and to secure our services. If you choose to use the Services and register an account, you are responsible for keeping your account credentials safe. We highly recommend that you do not share your username, password or other access details with anyone else.</li>
+                            <li><strong>Communicating with You:</strong> We use your personal information to provide you with customer support, to be responsive to you, to provide effective services to you and to maintain our business relationship with you.</li>
+                            <li><strong>Legal Reasons:</strong> We use your personal information to comply with applicable law or respond to valid legal process, including requests from law enforcement or government agencies, to investigate or participate in civil discovery, potential or actual litigation, or other adversarial legal proceedings, and to enforce or investigate potential violations of our terms or policies.</li>
+                        </ul>
+
+                        <h4>How We Disclose Personal Information</h4>
+                        <p>In certain circumstances, we may disclose your personal information to third parties for legitimate purposes subject to this Privacy Policy. Such circumstances may include:</p>
+                        <ul>
+                            <li>With Shopify, vendors and other third parties who perform services on our behalf (e.g. IT management, payment processing, data analytics, customer support, cloud storage, fulfillment and shipping).</li>
+                            <li>With business and marketing partners to provide marketing services and advertise to you. For example, we use Shopify to support personalized advertising with third-party services based on your online activity with different merchants and websites. Our business and marketing partners will use your information in accordance with their own privacy notices. Depending on where you reside, you may have a right to direct us not to share information about you to show you targeted advertisements and marketing based on your online activity with different merchants and websites. You can exercise your rights to opt-out of those uses <a href="#">here</a>.</li>
+                            <li>When you direct, request us or otherwise consent to our disclosure of certain information to third parties, such as to ship you products or through your use of social media widgets or login integrations.</li>
+                            <li>With our affiliates or otherwise within our corporate group.</li>
+                            <li>In connection with a business transaction such as a merger or bankruptcy, to comply with any applicable legal obligations (including to respond to subpoenas, search warrants and similar requests), to enforce any applicable terms of service or policies, and to protect or defend the Services, our rights, and the rights of our users or others.</li>
+                        </ul>
+
+                        <h4>Relationship with Shopify</h4>
+                        <p>The Services are hosted by Shopify, which collects and processes personal information about your access to and use of the Services in order to provide and improve the Services for you. Information you submit to the Services will be transmitted to and shared with Shopify as well as third parties that may be located in countries other than where you reside, in order to provide and improve the Services for you. In addition, to help protect, grow, and improve our business, we use certain Shopify enhanced features that incorporate data and information obtained from your interactions with our Store, along with other merchants and with Shopify. To provide these enhanced features, Shopify may make use of personal information collected about your interactions with our store, along with other merchants, and with Shopify. In these circumstances, Shopify is responsible for the processing of your personal information, including for responding to your requests to exercise your rights over use of your personal information for these purposes. To learn more about how Shopify uses your personal information and any rights you may have, you can visit the <a href="https://www.shopify.com/legal/privacy" target="_blank">Shopify Consumer Privacy Policy</a>.</p>
+
+                        <h4>Third Party Websites and Links</h4>
+                        <p>The Services may provide links to websites or other online platforms operated by third parties. If you follow links to sites not affiliated or controlled by us, you should review their privacy and security policies and other terms and conditions. We do not guarantee and are not responsible for the privacy or security of such sites, including the accuracy, completeness, or reliability of information found on these sites.</p>
+
+                        <h4>Children's Data</h4>
+                        <p>The Services are not intended to be used by children, and we do not knowingly collect any personal information about children under the age of majority in your jurisdiction. If you are the parent or guardian of a child who has provided us with their personal information, you may contact us using the contact details set out below to request that it be deleted.</p>
+
+                        <h4>Security and Retention of Your Information</h4>
+                        <p>Please be aware that no security measures are perfect or impenetrable, and we cannot guarantee "perfect security." In addition, any information you send to us may not be secure while in transit. We recommend that you do not use unsecure channels to communicate sensitive or confidential information to us.</p>
+
+                        <h4>Your Rights and Choices</h4>
+                        <p>Depending on where you live, you may have some or all of the rights listed below in relation to your personal information. However, these rights are not absolute, may apply only in certain circumstances and, in certain cases, we may decline your request as permitted by law.</p>
+                        <ul>
+                            <li><strong>Right to Access / Know.</strong> You may have a right to request access to personal information that we hold about you.</li>
+                            <li><strong>Right to Delete.</strong> You may have a right to request that we delete personal information we maintain about you.</li>
+                            <li><strong>Right to Correct.</strong> You may have a right to request that we correct inaccurate personal information we maintain about you.</li>
+                            <li><strong>Right of Portability.</strong> You may have a right to receive a copy of the personal information we hold about you.</li>
+                            <li><strong>Managing Communication Preferences.</strong> We may send you promotional emails, and you may opt out of receiving these at any time by using the unsubscribe option displayed in our emails to you.</li>
+                        </ul>
+
+                        <h4>Complaints</h4>
+                        <p>If you have complaints about how we process your personal information, please contact us using the contact details provided below.</p>
+
+                        <h4>Contact</h4>
+                        <p>Should you have any questions about our privacy practices or this Privacy Policy, or if you would like to exercise any of the rights available to you, please call or email us at <a href="mailto:thestorypetals@gmail.com">thestorypetals@gmail.com</a>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-b border-[#d6d3d1]">
+                <button class="w-full py-6 text-left flex justify-between items-center group focus:outline-none" onclick="togglePolicy('terms-service')">
+                    <span class="font-serif text-2xl text-[#5d3215] group-hover:text-[burlywood] transition-colors">Terms of Service</span>
+                    <span id="icon-terms-service" class="text-3xl font-light text-[burlywood] transition-transform duration-300">+</span>
+                </button>
+                <div id="terms-service" class="policy-content">
+                    <div class="pb-8 policy-text-block">
+                        <p class="mb-4">By purchasing from The Story Petals, you agree to the following:</p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li><strong>Orders & Payment:</strong> All orders are subject to availability. Payment must be completed at the time of purchase.</li>
+                            <li><strong>Intellectual Property:</strong> All website content, including images and text, is owned by The Story Petals and may not be reused without permission.</li>
+                            <li><strong>Limitation of Liability:</strong> The Story Petals is not liable for indirect or incidental damages from the use of our products or website.</li>
+                            <li><strong>Governing Law:</strong> These terms are governed by the laws of California, United States.</li>
+                        </ul>
+                        <p class="mt-4 font-bold">Questions? Contact us at <a href="mailto:thestorypetals@gmail.com" class="text-[burlywood]">thestorypetals@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-[#EAE1D7] text-center py-8 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="font-serif text-2xl" style="color: #523f2f;">The Story Petals</h3>
+
+            <div class="flex justify-center mt-4 mb-6">
+                <a href="https://www.instagram.com/thestorypetals/" target="_blank" rel="noopener noreferrer" class="text-[#523f2f] hover:text-[burlywood] transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-6 mb-6 text-xs uppercase tracking-widest" style="color: #523f2f;">
+                <a href="/policies#shipping-policy" class="hover:text-[burlywood] transition-colors duration-300">Delivery Info</a>
+                <a href="/policies#refund-policy" class="hover:text-[burlywood] transition-colors duration-300">Refund Policy</a>
+                <a href="/policies#privacy-policy" class="hover:text-[burlywood] transition-colors duration-300">Privacy Policy</a>
+                <a href="/policies#terms-service" class="hover:text-[burlywood] transition-colors duration-300">Terms of Service</a>
+            </div>
+
+            <p class="text-sm" style="color: #523f2f;">&copy; 2025 The Story Petals. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://sdks.shopifycdn.com/buy-button/latest/buybutton.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

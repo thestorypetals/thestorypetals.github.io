@@ -118,4 +118,57 @@ document.addEventListener('DOMContentLoaded', () => {
             galleryTrack.appendChild(item.cloneNode(true));
         });
     }
-});
+
+    // --- POLICIES PAGE: DEEP LINKING ---
+    // Checks if URL has a hash (e.g., policies.html#refund-policy) and opens it
+    if(window.location.hash) {
+        const id = window.location.hash.substring(1); // Remove the '#'
+        const element = document.getElementById(id);
+        
+        if (element) {
+            // Slight delay to ensure layout is ready
+            setTimeout(() => {
+                togglePolicy(id);
+                // Scroll to the button that controls this section
+                const button = element.previousElementSibling;
+                if(button) {
+                    button.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }, 300);
+        }
+    }
+
+}); // END OF DOMContentLoaded
+
+
+// --- GLOBAL FUNCTIONS (Must be outside DOMContentLoaded to work with onclick="") ---
+
+function togglePolicy(id) {
+    const content = document.getElementById(id);
+    const icon = document.getElementById('icon-' + id);
+    
+    if (!content) return; // Safety check if element doesn't exist
+
+    // 1. Close other open sections (Accordion effect)
+    document.querySelectorAll('.policy-content').forEach(div => {
+        if (div.id !== id && div.classList.contains('open')) {
+            div.style.maxHeight = null;
+            div.classList.remove('open');
+            const otherIcon = document.getElementById('icon-' + div.id);
+            if(otherIcon) otherIcon.classList.remove('rotate-icon');
+        }
+    });
+
+    // 2. Toggle the clicked section
+    if (content.style.maxHeight) {
+        // Close it
+        content.style.maxHeight = null;
+        content.classList.remove('open');
+        icon.classList.remove('rotate-icon');
+    } else {
+        // Open it
+        content.style.maxHeight = content.scrollHeight + "px";
+        content.classList.add('open');
+        icon.classList.add('rotate-icon');
+    }
+}
