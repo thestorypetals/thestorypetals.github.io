@@ -1,4 +1,4 @@
-/* cart.js - COMPACT CARDS, PADDING FIX, & FONTS */
+/* cart.js - MOBILE OVERFLOW FIX + TAN PEARL */
 
 const SHOPIFY_DOMAIN = 'the-story-petals.myshopify.com';
 const STOREFRONT_ACCESS_TOKEN = '7faa695d3fc67f34912d984bd3b265f5';
@@ -32,32 +32,34 @@ if (productElement) {
                 },
                 styles: {
                     product: {
-                        // --- CARD STYLE (COMPACT) ---
+                        // --- CARD BASE STYLES ---
                         'background-color': '#f2efeb',
                         'border-radius': '12px',
                         'box-shadow': '0 4px 15px rgba(93, 50, 21, 0.1)',
                         'text-align': 'center',
                         'overflow': 'hidden',
                         'transition': 'transform 0.3s ease',
+                        'box-sizing': 'border-box', // Crucial: prevents padding from adding width
                         
-                        // FIX 1: Add Padding to Top
+                        // Layout
                         'padding-top': '15px', 
                         'padding-bottom': '0px',
-                        
-                        // FIX 2: Reduce Card Height (Was 480px)
                         'min-height': '420px', 
-                        
-                        // Spacing between cards
                         'margin-bottom': '50px',
-                        'margin-left': '20px',
+                        'margin-left': '20px', // Desktop gap
 
                         // --- RESPONSIVE WIDTHS ---
                         '@media (min-width: 601px)': {
                             'width': 'calc(33.33% - 20px)',
                         },
+                        
+                        // --- FIX: MOBILE OVERFLOW ---
                         '@media (max-width: 600px)': {
-                            'width': 'calc(100% - 0px)',
-                            'margin-left': '0px',
+                            // Calculates full viewport width minus 40px (20px padding on each side)
+                            'width': 'calc(100vw - 40px)', 
+                            'margin-left': '0px', 
+                            'margin-right': '0px',
+                            'margin-bottom': '30px'
                         }
                     },
                     
@@ -67,7 +69,6 @@ if (productElement) {
                     },
                     
                     img: { 
-                         // FIX 2: Smaller Image (Was 350px)
                          'height': '280px', 
                          'width': '100%', 
                          'object-fit': 'contain', 
@@ -75,14 +76,14 @@ if (productElement) {
                          'display': 'block' 
                     },
 
-                    // --- TITLE STYLING (FIX 3: FONT) ---
+                    // --- TITLE STYLING (Tan Pearl) ---
                     title: {
-                        // We use the exact name from your CSS @font-face
                         'font-family': 'DisplayFont, serif', 
-                        'font-size': '1.4rem',
+                        'font-size': '1.8rem',
                         'color': '#5d3215',
                         'margin-bottom': '5px',
-                        'font-weight': 'normal'
+                        'font-weight': 'normal',
+                        'line-height': '1.1'
                     },
 
                     // --- PRICE STYLING ---
