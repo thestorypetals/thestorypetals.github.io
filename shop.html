@@ -60,11 +60,9 @@
 
     <section class="pt-32 pb-8 px-4 text-center">
         <h1 class="font-serif text-5xl md:text-7xl text-[#5d3215] mb-4">a love story</h1>
-        
         <p class="text-lg text-[#523f2f] max-w-2xl mx-auto mb-6">
             Our limited edition valentines collection is thoughtfully created to celebrate love through artful design.
         </p>
-        
         <p class="font-bold text-[#b08d55] uppercase tracking-widest">
             Accepting pre-orders only until 1/31
         </p>
@@ -76,17 +74,72 @@
             <div class="text-center text-gray-400 mt-10">Loading Collection...</div>
         </div>
 
-        <div class="mb-8 text-center border-t border-[#d6d3d1] pt-12 max-w-3xl mx-auto">
-            <div class="space-y-3 text-[#523f2f] text-lg">
-                <p>
-                    <span class="font-bold block mb-1">Pickup</span> 
-                    Available for pickup in Fremont (location to be emailed after purchase)
-                </p>
+        <div class="mb-8 max-w-3xl mx-auto border-t border-[#d6d3d1] pt-12">
+            
+            <div class="flex justify-center gap-4 mb-8">
+                <button onclick="toggleInfo('pickup')" id="btn-pickup" class="toggle-btn active px-8 py-3 text-sm uppercase tracking-widest font-bold rounded-full">
+                    Pickup
+                </button>
+                <button onclick="toggleInfo('delivery')" id="btn-delivery" class="toggle-btn px-8 py-3 text-sm uppercase tracking-widest font-bold rounded-full">
+                    Local Delivery
+                </button>
+            </div>
 
-                <p>
-                    <span class="font-bold block mb-1">Local Delivery on 2/12</span>
-                    Fremont, Milpitas, Los Gatos, San Jose, Santa Clara
-                </p>
+            <div class="text-[#523f2f] text-lg leading-relaxed bg-white/50 p-8 rounded-xl border border-[#d6d3d1]">
+                
+                <div id="info-pickup" class="info-section text-center">
+                    <h3 class="font-serif text-2xl mb-6 text-[#5d3215]">Pickup Available</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-6">
+                        <div>
+                            <span class="font-bold block mb-1 text-[#b08d55]">SoCal</span>
+                            <p class="font-bold">La Verne</p>
+                            <p class="text-sm">Feb 12</p>
+                        </div>
+                        <div>
+                            <span class="font-bold block mb-1 text-[#b08d55]">NorCal</span>
+                            <p class="font-bold">Fremont</p>
+                            <p class="text-sm">Feb 12 & 13</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-sm italic text-[#8c7b70] border-t border-[#d6d3d1] pt-4 mt-4 inline-block">
+                        Location & time slots will be emailed shortly after order confirmation
+                    </p>
+                </div>
+
+                <div id="info-delivery" class="info-section hidden text-left">
+                    <h3 class="font-serif text-2xl mb-6 text-center text-[#5d3215]">Local Delivery on Feb 13</h3>
+                    
+                    <div class="space-y-8">
+                        <div>
+                            <span class="font-bold block text-xl mb-3 text-[#b08d55] border-b border-[#d6d3d1] pb-1">SoCal</span>
+                            <div class="pl-4 space-y-4">
+                                <div>
+                                    <p class="font-bold">Inland Empire <span class="text-sm font-normal text-[#8c7b70]">- Morning/Afternoon</span></p>
+                                    <p class="text-sm text-[#5d3215] opacity-80">Claremont, Upland, La Verne, Chino, Chino Hills, Rancho, Ontario</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold">Orange County <span class="text-sm font-normal text-[#8c7b70]">- Afternoon/Evening</span></p>
+                                    <p class="text-sm text-[#5d3215] opacity-80">Fullerton, Anaheim, Brea, Diamond Bar, Walnut, Placentia</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="font-bold block text-xl mb-3 text-[#b08d55] border-b border-[#d6d3d1] pb-1">NorCal</span>
+                            <div class="pl-4 space-y-4">
+                                <div>
+                                    <p class="font-bold">Fremont, Milpitas <span class="text-sm font-normal text-[#8c7b70]">- Morning/Afternoon</span></p>
+                                </div>
+                                <div>
+                                    <p class="font-bold">Los Gatos, San Jose, Santa Clara <span class="text-sm font-normal text-[#8c7b70]">- Afternoon/Evening</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -95,7 +148,6 @@
     <footer class="bg-[#EAE1D7] text-center py-8 px-4">
         <div class="max-w-7xl mx-auto">
             <h3 class="font-serif text-2xl" style="color: #523f2f;">The Story Petals</h3>
-    
             <div class="flex justify-center mt-4 mb-6">
                 <a href="https://www.instagram.com/thestorypetals/" target="_blank" rel="noopener noreferrer" class="text-[#523f2f] hover:text-[burlywood] transition-colors duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -105,17 +157,41 @@
                     </svg>
                 </a>
             </div>
-    
             <div class="flex flex-wrap justify-center gap-6 mb-6 text-xs uppercase tracking-widest" style="color: #523f2f;">
                 <a href="/policies#shipping-policy" class="hover:text-[burlywood] transition-colors duration-300">Delivery Info</a>
                 <a href="/policies#refund-policy" class="hover:text-[burlywood] transition-colors duration-300">Refund Policy</a>
                 <a href="/policies#privacy-policy" class="hover:text-[burlywood] transition-colors duration-300">Privacy Policy</a>
                 <a href="/policies#terms-service" class="hover:text-[burlywood] transition-colors duration-300">Terms of Service</a>
             </div>
-    
             <p class="text-sm" style="color: #523f2f;">&copy; 2025 The Story Petals. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        function toggleInfo(type) {
+            const pickupInfo = document.getElementById('info-pickup');
+            const deliveryInfo = document.getElementById('info-delivery');
+            const btnPickup = document.getElementById('btn-pickup');
+            const btnDelivery = document.getElementById('btn-delivery');
+
+            if (type === 'pickup') {
+                pickupInfo.classList.remove('hidden');
+                deliveryInfo.classList.add('hidden');
+                
+                // Active: Burlywood + White Text
+                btnPickup.classList.add('active');
+                
+                // Inactive: Transparent + Dark Text
+                btnDelivery.classList.remove('active');
+            } else {
+                pickupInfo.classList.add('hidden');
+                deliveryInfo.classList.remove('hidden');
+
+                btnDelivery.classList.add('active');
+                btnPickup.classList.remove('active');
+            }
+        }
+    </script>
 
     <script src="script.js"></script>
     <script src="https://sdks.shopifycdn.com/buy-button/latest/buybutton.js"></script>

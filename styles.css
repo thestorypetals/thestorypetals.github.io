@@ -791,3 +791,38 @@ hr {
 .rotate-icon {
     transform: rotate(45deg);
 }
+
+
+        /* Custom Styles for the Toggle */
+        .toggle-btn {
+            transition: all 0.3s ease;
+            border: 2px solid #deb887; /* Burlywood Border */
+            /* FIX: Vertical Centering */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Active State: Burlywood Background */
+        .toggle-btn.active {
+            background-color: #deb887;
+            color: white;
+        }
+
+        /* Inactive State: Dark Text */
+        .toggle-btn:not(.active) {
+            color: #5d3215;
+            background-color: transparent;
+        }
+
+        .toggle-btn:not(.active):hover {
+            background-color: #f7eadd; /* Light Burlywood Tint */
+        }
+
+        .info-section {
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
