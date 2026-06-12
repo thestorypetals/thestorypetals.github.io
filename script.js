@@ -10,9 +10,46 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('nav');
 
     if (servicesButton && servicesDropdown) {
+        const closeServicesDropdown = () => {
+            servicesDropdown.classList.remove('is-open');
+            servicesButton.setAttribute('aria-expanded', 'false');
+
+            window.setTimeout(() => {
+                if (!servicesDropdown.classList.contains('is-open')) {
+                    servicesDropdown.classList.add('hidden');
+                }
+            }, 220);
+        };
+
+        const openServicesDropdown = () => {
+            servicesDropdown.classList.remove('hidden');
+            servicesButton.setAttribute('aria-expanded', 'true');
+            servicesDropdown.offsetHeight;
+
+            window.requestAnimationFrame(() => {
+                servicesDropdown.classList.add('is-open');
+            });
+        };
+
         servicesButton.addEventListener('click', (event) => {
             event.stopPropagation();
-            servicesDropdown.classList.toggle('hidden');
+            if (servicesDropdown.classList.contains('hidden')) {
+                openServicesDropdown();
+            } else {
+                closeServicesDropdown();
+            }
+        });
+
+        window.addEventListener('click', (event) => {
+            if (!servicesDropdown.classList.contains('hidden') && !servicesButton.contains(event.target) && !servicesDropdown.contains(event.target)) {
+                closeServicesDropdown();
+            }
+        });
+
+        window.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !servicesDropdown.classList.contains('hidden')) {
+                closeServicesDropdown();
+            }
         });
     }
 
@@ -38,12 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-    window.addEventListener('click', (event) => {
-        if (servicesDropdown && !servicesDropdown.classList.contains('hidden') && !servicesButton.contains(event.target)) {
-            servicesDropdown.classList.add('hidden');
-        }
-    });
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 10) {

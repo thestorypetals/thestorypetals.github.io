@@ -19,7 +19,7 @@
     <meta property="twitter:image" content="https://www.thestorypetals.com/logoMain.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260611">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,9 +47,19 @@
                         <a href="/" class="px-3 py-2 rounded-md text-base font-medium brand-accent">Home</a>
                         <div class="relative">
                             <button id="services-button" aria-haspopup="true" aria-expanded="false" class="px-3 py-2 rounded-md text-base font-medium brand-accent">Services</button>
-                            <div id="services-dropdown" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 hidden">
-                                <a href="/events" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Events</a>
-                                <a href="/florals" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Florals</a>
+                            <div id="services-dropdown" class="origin-top-right absolute right-0 mt-2 w-64 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 hidden">
+                                <a href="/events" class="service-menu-link">
+                                    <span class="service-menu-title">event planning</span>
+                                    <span class="service-menu-note">planning &amp; coordination</span>
+                                </a>
+                                <a href="/event-design-production" class="service-menu-link">
+                                    <span class="service-menu-title">event design &amp; production</span>
+                                    <span class="service-menu-note">vision, layout &amp; production details</span>
+                                </a>
+                                <a href="/florals" class="service-menu-link">
+                                    <span class="service-menu-title">florals &amp; decor</span>
+                                    <span class="service-menu-note">floral styling &amp; event details</span>
+                                </a>
                             </div>
                         </div>
                         <a href="/shop" class="px-3 py-2 rounded-md text-base font-medium brand-accent font-bold">Shop</a>
@@ -71,8 +81,12 @@
         <div class="md:hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[#F9F6F3]">
                 <a href="/" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">Home</a>
-                <a href="/events" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">Events</a>
-                <a href="/florals" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">Florals</a>
+                <div class="mobile-services-group">
+                    <p class="mobile-services-label">Services</p>
+                    <a href="/events" class="mobile-service-link">event planning</a>
+                    <a href="/event-design-production" class="mobile-service-link">event design &amp; production</a>
+                    <a href="/florals" class="mobile-service-link">florals &amp; decor</a>
+                </div>
                 <a href="/shop" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">Shop</a>
                 <a href="/about" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">About Us</a>
                 <a href="/contact" class="block px-3 py-2 rounded-md text-base font-medium brand-accent">Contact</a>
@@ -227,7 +241,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260611"></script>
     <script src="https://sdks.shopifycdn.com/buy-button/latest/buybutton.js"></script>
     <script src="cart.js"></script>
 </body>
